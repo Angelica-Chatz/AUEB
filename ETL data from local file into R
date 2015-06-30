@@ -1,6 +1,7 @@
 # XLsheet into R from local file
 require(XLConnect)
 wb <- loadWorkbook("~/data2014.xlsx", create=TRUE)
+
 data<-readWorksheet(wb, sheet="2014", startRow=3, endRow=205, startCol=0, endCol=0)
 
 # row names fix
@@ -24,8 +25,10 @@ plotdata<-plotdata[-grep(("Admissions"), rownames(plotdata)), ]
 maxvisitors<-apply(plotdata, 1, max)
 
 # Add max visitor column
+#plotdata<-cbind(plotdata, maxvisitors)
 
-plotdata<-cbind(plotdata, maxvisitors)
 
-# Transpose plotdata to use in shiny app
 tplotdata<-t(plotdata)
+
+
+write.csv(tplotdata, file="~/Museum2014/tdatafile.csv")
