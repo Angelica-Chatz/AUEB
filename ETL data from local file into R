@@ -32,3 +32,5 @@ tplotdata<-t(plotdata)
 
 
 write.csv(tplotdata, file="~/Museum2014/tdatafile.csv")
+
+#Manually delete "", from 1st row, to force header-TRUE
