@@ -1,4 +1,5 @@
 library(shiny)
+data<-read.csv("tdatafile.csv", header=TRUE)
 # Define the overall UI
 shinyUI(
   
@@ -14,7 +15,7 @@ shinyUI(
       # Define the sidebar with one input
       sidebarPanel(
         selectInput("Museum", "Museum:", 
-                    choices=colnames(tplotdata)),
+                    choices=colnames(data)),
         hr(),
         helpText("Data from ELSTAT")
       ),
@@ -28,7 +29,7 @@ shinyUI(
         p("This is an interactive graph presenting the visitors' traffic to every museum in Greece, conscerning the year 2014."),
         p("Tools: R Studio ( libraries: XL Connect & Shiny )"),
         p("Data Source: http://www.statistics.gr/portal/page/portal/ESYE")
-      
+        
         
       )
       
