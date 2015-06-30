@@ -6,7 +6,7 @@ shinyUI(
   fluidPage(    
     
     # Give the page a title
-    titlePanel("Museum by Month of Year 2014"),
+    titlePanel("Museum by Month"),
     
     # Generate a row with a sidebar
     sidebarLayout(      
@@ -23,8 +23,12 @@ shinyUI(
       mainPanel(
         plotOutput("museumPlot"),
         
-        h1("First level title")
-
+        h2("Visitors' Traffic to museums of the entire Greek territory during the year 2014"),
+        p("Authors: Karampatsos Stasinos, Chatzimoschou Angeliki"),
+        p("This is an interactive graph presenting the visitors' traffic to every museum in Greece, conscerning the year 2014."),
+        p("Tools: R Studio ( libraries: XL Connect & Shiny )"),
+        p("Data Source: http://www.statistics.gr/portal/page/portal/ESYE")
+      
         
       )
       
